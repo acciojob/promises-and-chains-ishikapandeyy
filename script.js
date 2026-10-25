@@ -15,16 +15,17 @@ btn.addEventListener("click",()=>{
  }
 })
 
-function ageValidation(){
-return new Promise((resolve,reject)=>{
-    if(age.value>=18){
-       setTimeout(()=>{
-         resolve("Welcome, . You can vote.")
-       },4000)
-    }else{
-        setTimeout(()=>{
-         reject("Oh sorry . You aren't old enough.")
-       },4000)
-    }
-})
+
+function ageValidation() {
+    return new Promise((resolve, reject) => {
+        if (Number(age.value) >= 18) {
+            setTimeout(() => {
+                resolve(`Welcome, ${username.value}. You can vote.`);
+            }, 4000);
+        } else {
+            setTimeout(() => {
+                reject(`Oh sorry ${username.value}. You aren't old enough.`);
+            }, 4000);
+        }
+    });
 }
